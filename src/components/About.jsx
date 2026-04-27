@@ -13,8 +13,8 @@ const About = () => {
       <div className="about-content grid fade-in">
         <div className="about-text glass">
           <p className="text-lg text-muted">
-            Hello! I'm James Mwendwa, a passionate Computer Science student with
-            a strong foundation in both software development and network
+            Hello! I'm James M. Wambua, a passionate Computer Science student
+            with a strong foundation in both software development and network
             engineering. My journey in tech is driven by a curiosity to
             understand how systems work from the ground up, whether it's
             configuring a router or building a scalable mobile application.

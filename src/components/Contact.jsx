@@ -1,7 +1,7 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Mail, Send } from 'lucide-react';
-import { FaGithub as Github, FaLinkedin as Linkedin, FaTwitter as Twitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -27,13 +27,13 @@ const Contact = () => {
             </a>
             <div className="social-links flex gap-4 mt-4">
               <a href="#" className="social-link glass flex items-center justify-center" aria-label="GitHub">
-                <Github size={24} />
+                <FaGithub size={24} />
               </a>
               <a href="#" className="social-link glass flex items-center justify-center" aria-label="LinkedIn">
-                <Linkedin size={24} />
+                <FaLinkedin size={24} />
               </a>
               <a href="#" className="social-link glass flex items-center justify-center" aria-label="Twitter">
-                <Twitter size={24} />
+                <FaTwitter size={24} />
               </a>
             </div>
           </div>

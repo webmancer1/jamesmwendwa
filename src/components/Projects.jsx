@@ -1,6 +1,6 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
-import { FaGithub as Github } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './Projects.css';
 
@@ -55,7 +55,7 @@ const Projects = () => {
               </div>
               <div className="project-links flex gap-4">
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
-                  <Github size={20} /> Code
+                  <FaGithub size={20} /> Code
                 </a>
                 <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
                   <ExternalLink size={20} /> Live

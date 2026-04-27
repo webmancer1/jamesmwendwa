@@ -1,25 +1,19 @@
-import React from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import './Skills.css';
+import React from "react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import "./Skills.css";
 
 const skillCategories = [
   {
     title: "Programming Languages",
-    skills: [
-      { name: "Kotlin", level: 90 },
-      { name: "Java", level: 85 },
-      { name: "Python", level: 80 },
-      { name: "JavaScript", level: 75 }
-    ]
+    skills: [{ name: "Kotlin", level: 90 }],
   },
   {
     title: "Technologies & Frameworks",
     skills: [
       { name: "Android SDK", level: 90 },
       { name: "Jetpack Compose", level: 85 },
-      { name: "React", level: 70 },
-      { name: "Networking (Cisco)", level: 80 }
-    ]
+      { name: "Networking (Cisco)", level: 80 },
+    ],
   },
   {
     title: "Tools & Platforms",
@@ -27,9 +21,8 @@ const skillCategories = [
       { name: "Git & GitHub", level: 90 },
       { name: "Firebase", level: 85 },
       { name: "Linux", level: 80 },
-      { name: "Docker", level: 65 }
-    ]
-  }
+    ],
+  },
 ];
 
 const Skills = () => {
@@ -49,11 +42,13 @@ const Skills = () => {
                 <div key={sIdx} className="skill-item">
                   <div className="skill-info flex justify-between">
                     <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage text-muted">{skill.level}%</span>
+                    <span className="skill-percentage text-muted">
+                      {skill.level}%
+                    </span>
                   </div>
                   <div className="progress-bar">
-                    <div 
-                      className="progress-fill" 
+                    <div
+                      className="progress-fill"
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>

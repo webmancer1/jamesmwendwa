@@ -23,7 +23,7 @@ const projectsData = [
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
     tags: ["Android", "Room", "Firebase"],
     github: "https://github.com/webmancer1/MoneyMap",
-    live: "#",
+    live: "https://github.com/webmancer1/MoneyMap/releases/tag/v1.0.1",
   },
   {
     title: "Network Simulation",

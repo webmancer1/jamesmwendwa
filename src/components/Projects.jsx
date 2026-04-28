@@ -26,7 +26,7 @@ const projectsData = [
     live: "https://github.com/webmancer1/MoneyMap/releases/tag/v1.0.1",
   },
   {
-    title: "Network Simulation",
+    title: "LifePing",
     description:
       "Complex enterprise network topology designed and simulated in Cisco Packet Tracer, ensuring high availability and security.",
     image:

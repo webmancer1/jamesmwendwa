@@ -16,7 +16,7 @@ const projectsData = [
     live: "#",
   },
   {
-    title: "Memora Budget Manager",
+    title: "MoneyMap",
     description:
       "A robust budgeting application featuring MVVM architecture, Room database for local persistence, and Firebase for backup.",
     image:

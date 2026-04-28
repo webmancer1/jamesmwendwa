@@ -18,7 +18,7 @@ const projectsData = [
   {
     title: "MoneyMap",
     description:
-      "A robust budgeting application featuring MVVM architecture, Room database for local persistence, and Firebase for backup.",
+      "A comprehensive personal finance management mobile application built with Kotlin and Jetpack Compose that enables users to track expenses, manage budgets, monitor debts, set savings goals, and gain financial insights through analytics and reports.",
     image:
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
     tags: ["Android", "Room", "Firebase"],

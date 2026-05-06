@@ -28,10 +28,18 @@ const projectsData = [
   {
     title: "LifePing",
     description:
-      "Complex enterprise network topology designed and simulated in Cisco Packet Tracer, ensuring high availability and security.",
-    image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
-    tags: ["Cisco", "Packet Tracer", "Networking"],
+      "LifePing is a mobile app that helps users track their daily habits and routines, providing insights and reminders to promote a healthier lifestyle.",
+    image: "/lifeping.png",
+    tags: ["Android", "Room", "Firebase"],
+    github: "#",
+    live: "#",
+  },
+  {
+    title: "Nueropause",
+    description:
+      "Neuropause runs quietly in your system tray, tracks your work time, and after your set work period (default: 50 min), displays a calming full-screen break overlay with wellness reminders like resting your eyes, stretching, or drinking water.",
+    image: "/neuropause.png",
+    tags: ["Python", "Shell", "Linux"],
     github: "#",
     live: "#",
   },

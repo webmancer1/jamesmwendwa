@@ -5,7 +5,11 @@ import "./Skills.css";
 const skillCategories = [
   {
     title: "Programming Languages",
-    skills: [{ name: "Kotlin", level: 90 }],
+    skills: [
+      { name: "Kotlin", level: 90 },
+      { name: "Python", level: 60 },
+      { name: "Shell", level: 50 }
+    ],
   },
   {
     title: "Technologies & Frameworks",

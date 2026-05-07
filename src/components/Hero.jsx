@@ -1,7 +1,7 @@
-import React from 'react';
-import { ArrowRight, Mail } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import './Hero.css';
+import React from "react";
+import { ArrowRight, Mail } from "lucide-react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import "./Hero.css";
 
 const Hero = () => {
   const scrollRef = useScrollAnimation();
@@ -10,8 +10,10 @@ const Hero = () => {
     <section id="home" className="hero-section container flex items-center">
       <div className="hero-content" ref={scrollRef}>
         <div className="fade-in">
-          <span className="hero-greeting">Hi, I am</span>
-          <h1 className="hero-name">James Mwendwa<span className="brand-dot">.</span></h1>
+          <span className="hero-greeting"></span>
+          <h1 className="hero-name">
+            James Mwendwa Wambua<span className="brand-dot"></span>
+          </h1>
           <h2 className="hero-title text-muted">
             Computer Science Student | Android Developer | Network Engineer
           </h2>

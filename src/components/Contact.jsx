@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { Mail, Send } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -6,6 +6,22 @@ import "./Contact.css";
 
 const Contact = () => {
   const scrollRef = useScrollAnimation();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, message } = formData;
+    const mailtoLink = `mailto:mwendwajames2004@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    window.location.href = mailtoLink;
+  };
 
   return (
     <section id="contact" className="section container">
@@ -45,7 +61,7 @@ const Contact = () => {
                 <FaLinkedin size={24} />
               </a>
               <a
-                href="#"
+                href="https://x.com/J_Mwendwa1"
                 className="social-link glass flex items-center justify-center"
                 aria-label="Twitter"
               >
@@ -57,7 +73,7 @@ const Contact = () => {
 
         <form
           className="contact-form glass flex flex-col gap-4"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <div className="form-group">
             <label htmlFor="name" className="form-label">
@@ -68,6 +84,8 @@ const Contact = () => {
               id="name"
               className="form-input"
               placeholder="John Doe"
+              value={formData.name}
+              onChange={handleChange}
               required
             />
           </div>
@@ -80,6 +98,8 @@ const Contact = () => {
               id="email"
               className="form-input"
               placeholder="john@example.com"
+              value={formData.email}
+              onChange={handleChange}
               required
             />
           </div>
@@ -92,6 +112,8 @@ const Contact = () => {
               className="form-input"
               rows="5"
               placeholder="How can I help you?"
+              value={formData.message}
+              onChange={handleChange}
               required
             ></textarea>
           </div>

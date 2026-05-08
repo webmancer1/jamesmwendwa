@@ -1,5 +1,6 @@
 import React from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { Download } from "lucide-react";
 import "./About.css";
 
 const About = () => {
@@ -25,6 +26,15 @@ const About = () => {
             ideas into efficient, user-focused digital solutions. I believe in
             writing clean, modular code and continuously expanding my skill set.
           </p>
+          <div className="mt-8">
+            <a
+              href="/cv.pdf"
+              download="James_M_Wambua_CV.pdf"
+              className="btn btn-primary inline-flex items-center gap-2"
+            >
+              <Download size={18} /> Download CV
+            </a>
+          </div>
         </div>
         <div className="about-stats grid">
           <div className="stat-card glass flex flex-col items-center justify-center">

@@ -49,7 +49,7 @@ body {
   color: var(--text-primary);
   transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a {

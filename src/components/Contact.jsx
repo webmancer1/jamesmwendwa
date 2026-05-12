@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { Mail, Send } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 const Contact = () => {
   const scrollRef = useScrollAnimation();
+  const form = useRef();
+  const [status, setStatus] = useState("idle");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,9 +21,27 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, email, message } = formData;
-    const mailtoLink = `mailto:mwendwajames2004@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    window.location.href = mailtoLink;
+    setStatus("sending");
+
+    // Replace these with your actual EmailJS IDs or use the .env variables
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_5fpcsaz";
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_z2gsdou";
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "VHmL-Zq8fY2XremgZ";
+
+    emailjs
+      .sendForm(serviceID, templateID, form.current, publicKey)
+      .then(
+        () => {
+          setStatus("success");
+          setFormData({ name: "", email: "", message: "" });
+          setTimeout(() => setStatus("idle"), 5000);
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          setStatus("error");
+          setTimeout(() => setStatus("idle"), 5000);
+        }
+      );
   };
 
   return (
@@ -72,6 +93,7 @@ const Contact = () => {
         </div>
 
         <form
+          ref={form}
           className="contact-form glass flex flex-col gap-4"
           onSubmit={handleSubmit}
         >
@@ -82,6 +104,7 @@ const Contact = () => {
             <input
               type="text"
               id="name"
+              name="name"
               className="form-input"
               placeholder="John Doe"
               value={formData.name}
@@ -96,6 +119,7 @@ const Contact = () => {
             <input
               type="email"
               id="email"
+              name="email"
               className="form-input"
               placeholder="john@example.com"
               value={formData.email}
@@ -109,6 +133,7 @@ const Contact = () => {
             </label>
             <textarea
               id="message"
+              name="message"
               className="form-input"
               rows="5"
               placeholder="How can I help you?"
@@ -117,9 +142,28 @@ const Contact = () => {
               required
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-primary mt-4">
-            Send Message <Send size={18} />
+          <button 
+            type="submit" 
+            className="btn btn-primary mt-4"
+            disabled={status === "sending"}
+          >
+            {status === "sending" ? (
+              "Sending..."
+            ) : (
+              <>Send Message <Send size={18} /></>
+            )}
           </button>
+          
+          {status === "success" && (
+            <p style={{ color: "#10b981", textAlign: "center", marginTop: "0.5rem" }}>
+              Message sent successfully!
+            </p>
+          )}
+          {status === "error" && (
+            <p style={{ color: "#ef4444", textAlign: "center", marginTop: "0.5rem" }}>
+              Failed to send message. Please try again.
+            </p>
+          )}
         </form>
       </div>
     </section>

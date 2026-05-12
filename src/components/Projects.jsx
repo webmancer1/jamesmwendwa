@@ -9,8 +9,7 @@ const projectsData = [
     title: "Servora",
     description:
       "A real-time server monitoring dashboard Android app with Jetpack Compose, Kotlin Flow, and Hilt for dependency injection.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    image: "/Servora.jpeg",
     tags: ["Kotlin", "Android", "Jetpack Compose"],
     github: "https://github.com/webmancer1/Servora",
     live: "#",
@@ -19,8 +18,7 @@ const projectsData = [
     title: "MoneyMap",
     description:
       "A comprehensive personal finance management mobile application built with Kotlin and Jetpack Compose that enables users to track expenses, manage budgets, monitor debts, set savings goals, and gain financial insights through analytics and reports.",
-    image:
-      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+    image: "/Moneymap.jpeg",
     tags: ["Android", "Room", "Firebase"],
     github: "https://github.com/webmancer1/MoneyMap",
     live: "https://github.com/webmancer1/MoneyMap/releases/tag/v1.0.1",
@@ -29,7 +27,7 @@ const projectsData = [
     title: "LifePing",
     description:
       "LifePing is a mobile app that helps users track their daily habits and routines, providing insights and reminders to promote a healthier lifestyle.",
-    image: "/lifeping.png",
+    image: "/lifeping.jpeg",
     tags: ["Android", "Room", "Firebase"],
     github: "#",
     live: "#",

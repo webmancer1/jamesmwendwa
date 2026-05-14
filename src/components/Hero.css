@@ -1,6 +1,21 @@
 .hero-section {
+  position: relative;
   min-height: 100vh;
   padding-top: 5rem; /* Account for navbar */
+  width: 100%;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('../assets/hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -37,6 +52,12 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 7rem;
+  }
   .hero-name {
     font-size: 3rem;
   }

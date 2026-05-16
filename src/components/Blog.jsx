@@ -12,9 +12,7 @@ const blogPosts = [
     image: "/cloudflare_banner.png",
     tags: ["Cloudflare Pages", "Github"],
     link: "https://medium.com/@mwendwajames2004/how-i-hosted-my-portfolio-website-for-free-using-github-and-cloudflare-pages-59a7c2770476",
-  },
-
-  ,
+  }
 ];
 
 const Blog = () => {
@@ -32,12 +30,12 @@ const Blog = () => {
               <img src={post.image} alt={post.title} className="blog-image" />
             </div>
             <div className="blog-content">
-              <div className="blog-meta flex gap-2 items-center text-muted text-sm">
+              <div className="blog-meta flex gap-2 items-center text-sm">
                 <Calendar size={14} />
                 <span>{post.date}</span>
               </div>
               <h3 className="blog-title">{post.title}</h3>
-              <p className="blog-excerpt text-muted">{post.excerpt}</p>
+              <p className="blog-excerpt">{post.excerpt}</p>
               <div className="blog-tags">
                 {post.tags.map((tag, tIdx) => (
                   <span key={tIdx} className="blog-tag">
@@ -45,8 +43,13 @@ const Blog = () => {
                   </span>
                 ))}
               </div>
-              <a href={post.link} className="blog-link">
-                Read More <ExternalLink size={16} />
+              <a 
+                href={post.link} 
+                className="blog-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Read Article <ExternalLink size={16} />
               </a>
             </div>
           </div>

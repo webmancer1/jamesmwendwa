@@ -5,18 +5,7 @@
   width: 100%;
 }
 
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('../assets/hero_bg.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  opacity: 0.15;
-  z-index: -1;
-  pointer-events: none;
-}
+
 
 .hero-content {
   max-width: 800px;
